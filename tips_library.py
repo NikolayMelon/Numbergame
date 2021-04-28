@@ -14,9 +14,11 @@ def devisers_of(answer,*_):
     numbers = []
     for f in range(2,answer):
         if answer % f:
-            pass
+            pass           
         else:
-            numbers.append(f)
+            numbers.append(f'One of the devisors of the answer is {f}')
+    if numbers == []:
+        numbers.append('The answer is simple ;)')
     return numbers
 def multiplier(answer,*_):
     numbers = []
@@ -24,3 +26,4 @@ def multiplier(answer,*_):
         multiplied_answer = f'Answer multiplied by something = {answer * f}'
         numbers.append(multiplied_answer)
     return numbers
+devisers_of(7)

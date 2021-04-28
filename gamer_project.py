@@ -12,21 +12,22 @@ DEBUG = 1
 def level(difficulty,random_number):
     hints = [tips_library.devisers_of,tips_library.greater_smaller,tips_library.multiplier]
     done_hints = [tips_library.devisers_of(random_number), tips_library.multiplier(random_number)]
-    if DEBUG:
-        print(random_number)
-    print(f'level difficulty is {difficulty}')
-    inputted_number = int(input('Enter number '))
-    if inputted_number == random_number:
-        win = 1
-        print('You win!')
-    else:
-        win = 0
-        print('You lose!')
-        done_hints = [tips_library.devisers_of(random_number), tips_library.multiplier(random_number)]
-        fg = random.choice(random.choice(done_hints))
-        print(f'tip: {fg}')
-#        print(f'fg() contains {fg(random_number,inputted_number)}')
-#        print(f'Hint: Devisors of the answer are {tips_library.devisers_of(random_number)}')
+    while True:
+        if DEBUG:
+            print(random_number)
+        print(f'level difficulty is {difficulty}')
+        inputted_number = int(input('Enter number '))
+        if inputted_number == random_number:
+            win = 1
+            print('You win!')
+            break
+        else:
+            win = 0
+            print('You lose!')
+            fg = random.choice(random.choice(done_hints))
+            print(f'tip: {fg}')
+    #        print(f'fg() contains {fg(random_number,inputted_number)}')
+    #        print(f'Hint: Devisors of the answer are {tips_library.devisers_of(random_number)}')
     return win
 def main():
     difficulty = 10
