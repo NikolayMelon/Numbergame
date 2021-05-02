@@ -12,6 +12,8 @@ DEBUG = 1
 def level(difficulty,random_number):
     hints = [tips_library.devisers_of,tips_library.greater_smaller,tips_library.multiplier]
     done_hints = [tips_library.devisers_of(random_number), tips_library.multiplier(random_number)]
+    print(done_hints)
+    #print(done_hints)
     while True:
         if DEBUG:
             print(random_number)
@@ -25,7 +27,12 @@ def level(difficulty,random_number):
             win = 0
             print('You lose!')
             fg = random.choice(random.choice(done_hints))
+            #all_hints = []
+            #all_hints.append(fg)
+            #if fg == all_hints[0]:
+            #    fg = random.choice(random.choice(done_hints))
             print(f'tip: {fg}')
+    #        done_hints.pop(fg)
     #        print(f'fg() contains {fg(random_number,inputted_number)}')
     #        print(f'Hint: Devisors of the answer are {tips_library.devisers_of(random_number)}')
     return win
@@ -45,5 +52,4 @@ def main():
         else:
             score = score-1
             print(f'Score is {score}')
-
 main()

@@ -26,4 +26,11 @@ def multiplier(answer,*_):
         multiplied_answer = f'Answer multiplied by something = {answer * f}'
         numbers.append(multiplied_answer)
     return numbers
-devisers_of(7)
+def list_flatten(list_):
+    ss = []
+    for f in list_:
+        for d in f:
+            ss.append(d)
+    return ss
+tops = [[1,4,2], [22,87,4]]
+print(list_flatten(tops))
