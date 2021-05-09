@@ -32,5 +32,3 @@ def list_flatten(list_):
         for d in f:
             ss.append(d)
     return ss
-tops = [[1,4,2], [22,87,4]]
-print(list_flatten(tops))
